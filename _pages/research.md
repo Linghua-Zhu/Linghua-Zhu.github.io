@@ -21,7 +21,7 @@ for, such as a reaction barrier or a spectral gap, and most do not. This is the 
 expect to occupy most of the group's attention at Mines.
 
 <figure>
-  <img src="/images/ses.png" alt="A three-qubit circuit above a bar chart of the sensitivity of a target observable to the error on each gate, with two thresholds sorting the gates into tiers.">
+  <img src="/images/ses.svg" alt="A three-qubit circuit above a bar chart of the sensitivity of a target observable to the error on each gate, with two thresholds sorting the gates into tiers.">
   <figcaption>Sensitivity of a target observable to the error on each gate. Two thresholds sort
   the gates into tiers, from the ones that have to be protected to the ones that can be
   dropped.</figcaption>
@@ -45,7 +45,7 @@ allocation question can be asked across methods rather than tuned per paper.
 ## Structured Encoding for Molecular Learning
 
 <figure>
-  <img src="/images/hse.png" alt="A molecule is passed through a mean-field calculation to give density and Fock matrices and a three-index cumulant tensor, which set the gate angles of a layered circuit.">
+  <img src="/images/hse.svg" alt="A molecule is passed through a mean-field calculation to give density and Fock matrices and a three-index cumulant tensor, which set the gate angles of a layered circuit.">
   <figcaption>A molecular Hamiltonian decomposed by body order and written directly into the
   circuit. One-body terms set single-qubit rotations, pair correlations set two-qubit gates, and
   three-body cumulants set the layer above. Only the final block is trainable.</figcaption>
@@ -64,11 +64,13 @@ account of where that window sits, rather than a report that it exists.
 
 ## Noise as a Design Variable
 
-<figure>
-  <img src="/images/noise.png" alt="Performance change of trained models as depolarizing noise increases, split into a group that improves, a group that degrades, and a group that is indifferent.">
-  <figcaption>Models trained on the same molecular data under increasing depolarizing noise.
-  One group improves, a smaller group degrades, and about half are indifferent. The split tracks
-  how the model was initialized.</figcaption>
+<figure style="max-width:480px;margin-left:auto;margin-right:auto;">
+  <img src="/images/noise.svg" alt="Upper panel, performance change of trained models as depolarizing noise increases, split into a group that improves, a group that degrades, and a group that is indifferent. Lower panel, training and validation error against noise level.">
+  <figcaption>The upper panel shows models trained on the same molecular data under increasing
+  depolarizing noise. One group improves, a smaller group degrades, and about half are
+  indifferent. The lower panel shows training and validation error against noise level. Training
+  error rises throughout while validation error passes through a minimum, which is the signature
+  of noise acting as a regularizer.</figcaption>
 </figure>
 
 **When noise improves learning.** Noise is normally treated as damage to be removed. In
