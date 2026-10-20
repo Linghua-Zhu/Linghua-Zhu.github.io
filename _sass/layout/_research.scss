@@ -1,0 +1,390 @@
+/* ==========================================================================
+   RESEARCH PAGE, TWO DIRECTIONS
+   ========================================================================== */
+
+/* Three colours. now = today's devices, next = tomorrow's machines,
+   start = teaching. The bright values are for bars, tints and rules,
+   the text values are the same hues darkened enough to read on white. */
+
+:root {
+  --qm-now: #00b0f6;
+  --qm-next: #00bf7d;
+  --qm-start: #f8766d;
+  --qm-now-text: #0078a8;
+  --qm-next-text: #007f52;
+  --qm-start-text: #c93a30;
+  --qm-now-soft: rgba(0, 176, 246, 0.1);
+  --qm-next-soft: rgba(0, 191, 125, 0.11);
+  --qm-start-soft: rgba(248, 118, 109, 0.12);
+  --qm-card-bg: #fff;
+  --qm-card-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 8px 24px rgba(16, 24, 40, 0.06);
+  --qm-card-shadow-hover: 0 2px 4px rgba(16, 24, 40, 0.08), 0 14px 32px rgba(16, 24, 40, 0.1);
+  --qm-muted: #5b6470;
+}
+
+html[data-theme="dark"] {
+  --qm-now-text: #5cd1ff;
+  --qm-next-text: #4fe0a6;
+  --qm-start-text: #ffa39d;
+  --qm-now-soft: rgba(0, 176, 246, 0.16);
+  --qm-next-soft: rgba(0, 191, 125, 0.16);
+  --qm-start-soft: rgba(248, 118, 109, 0.16);
+  --qm-card-bg: #4e4e4e;
+  --qm-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --qm-card-shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.35), 0 14px 32px rgba(0, 0, 0, 0.3);
+  --qm-muted: #d2d6db;
+}
+
+/* The theme underlines every link in page content. Not these. */
+
+.page__content .duality__line a,
+.page__content a.direction,
+.page__content a.chip,
+.page__content .dirnav a,
+.page__content .bigpicture > a {
+  text-decoration: none;
+}
+
+.page__content a.direction:hover,
+.page__content a.chip:hover,
+.page__content .bigpicture > a:hover {
+  text-decoration: none;
+}
+
+/* Tagline */
+
+.duality {
+  margin: 0.2em 0 1.4em;
+  padding-bottom: 1.1em;
+  text-align: center;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, var(--qm-now), var(--qm-next)) 1;
+}
+
+.duality__line {
+  margin: 0;
+  font-size: 1.75em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.duality__line a {
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.duality__line a:hover {
+  opacity: 0.78;
+}
+
+.duality__line .d1 {
+  color: var(--qm-now-text);
+}
+
+.duality__line .d2 {
+  color: var(--qm-next-text);
+}
+
+.duality__arrows {
+  display: block;
+  margin: 0.05em 0;
+  font-size: 0.9em;
+  line-height: 1.1;
+  font-weight: 400;
+  background: linear-gradient(90deg, var(--qm-now), var(--qm-next));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Overview figure */
+
+.bigpicture {
+  margin: 1.6em 0 0.4em;
+}
+
+.bigpicture > a {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--qm-card-shadow);
+  background: #fff;
+  transition: box-shadow 0.15s ease;
+}
+
+.bigpicture > a:hover {
+  box-shadow: var(--qm-card-shadow-hover);
+}
+
+.bigpicture img {
+  display: block;
+  width: 100%;
+}
+
+/* Two directions */
+
+.directions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1em;
+  margin: 1.8em 0 0.9em;
+}
+
+.direction {
+  position: relative;
+  display: block;
+  padding: 1.25em 1.4em 1.3em;
+  border-radius: 14px;
+  background: var(--qm-card-bg);
+  box-shadow: var(--qm-card-shadow);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.direction::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--qm-now);
+}
+
+.direction--2::before {
+  background: var(--qm-next);
+}
+
+.direction--start::before {
+  background: var(--qm-start);
+}
+
+.direction:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--qm-card-shadow-hover);
+  text-decoration: none;
+}
+
+.direction p {
+  margin: 0;
+}
+
+.direction__eyebrow {
+  margin-bottom: 0.5em !important;
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--qm-now-text);
+}
+
+.direction__title {
+  margin-bottom: 0.45em !important;
+  font-size: 1.2em;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--qm-now-text);
+}
+
+.direction--2 .direction__eyebrow,
+.direction--2 .direction__title {
+  color: var(--qm-next-text);
+}
+
+.direction--start .direction__eyebrow,
+.direction--start .direction__title {
+  color: var(--qm-start-text);
+}
+
+.direction__text {
+  font-size: 0.95em;
+  line-height: 1.55;
+  color: var(--qm-muted);
+}
+
+.direction--2 {
+  text-align: right;
+}
+
+/* Topic chips */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  margin: 0 0 1.4em;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.35em 0.85em;
+  border-radius: 999px;
+  font-size: 0.82em;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: filter 0.15s ease;
+}
+
+.chip:hover {
+  filter: brightness(0.92);
+  text-decoration: none;
+}
+
+.chip--1 {
+  color: var(--qm-now-text);
+  background: var(--qm-now-soft);
+}
+
+.chip--2 {
+  color: var(--qm-next-text);
+  background: var(--qm-next-soft);
+}
+
+.chip--start {
+  color: var(--qm-start-text);
+  background: var(--qm-start-soft);
+}
+
+/* Shared methodology */
+
+.method {
+  margin: 0 0 2.4em;
+  padding: 1em 1.4em;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--qm-now-soft), var(--qm-next-soft));
+  font-size: 0.92em;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Section headings and student notes */
+
+.page__content h2#todays-qubits,
+.page__content h2#tomorrows-qubits,
+.page__content h2#start {
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid var(--qm-now);
+  color: var(--qm-now-text);
+}
+
+.page__content h2#tomorrows-qubits {
+  border-bottom-color: var(--qm-next);
+  color: var(--qm-next-text);
+}
+
+.page__content h2#start {
+  border-bottom-color: var(--qm-start);
+  color: var(--qm-start-text);
+}
+
+.students {
+  margin: 1.2em 0 1.6em;
+  padding: 0.9em 1.2em;
+  border-left: 4px solid var(--qm-now);
+  border-radius: 0 10px 10px 0;
+  background: var(--qm-now-soft);
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.students--2 {
+  border-left-color: var(--qm-next);
+  background: var(--qm-next-soft);
+}
+
+/* Course card, also used on the Teaching page */
+
+.course {
+  margin: 1.2em 0 1.6em;
+}
+
+.course .direction {
+  text-align: left;
+}
+
+/* Direction pages */
+
+.qm-title--now {
+  color: var(--qm-now-text);
+}
+
+.qm-title--next {
+  color: var(--qm-next-text);
+}
+
+.dirnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4em 1em;
+  margin: 0 0 1.6em;
+  padding: 0.6em 0;
+  border-top: 3px solid var(--qm-now);
+  border-bottom: 1px solid var(--global-border-color);
+  font-size: 0.85em;
+}
+
+.dirnav--next {
+  border-top-color: var(--qm-next);
+}
+
+.dirnav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--qm-muted);
+}
+
+.dirnav a:hover {
+  text-decoration: underline;
+}
+
+.dirnav__eyebrow {
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--qm-now-text);
+}
+
+.dirnav--next .dirnav__eyebrow {
+  color: var(--qm-next-text);
+}
+
+.dirnav--now .dirnav__other {
+  color: var(--qm-next-text);
+}
+
+.dirnav--next .dirnav__other {
+  color: var(--qm-now-text);
+}
+
+.directions--foot {
+  grid-template-columns: 1fr;
+  margin-top: 2.6em;
+}
+
+.directions--foot .direction--2 {
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .duality__line {
+    font-size: 1.4em;
+  }
+
+  .directions {
+    grid-template-columns: 1fr;
+  }
+
+  .direction--2 {
+    text-align: left;
+  }
+}

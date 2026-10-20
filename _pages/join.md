@@ -34,6 +34,8 @@ To help me understand your interests and reply thoughtfully, please include the 
 
 ## Contact
 
+linghua.zhu@mines.edu
+
 linghua8@uw.edu
 
 linghua.zhu0802@gmail.com

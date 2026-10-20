@@ -12,6 +12,12 @@ Full list on [Google Scholar](https://scholar.google.com/citations?user=BNPyHf4A
 *Noise-induced regularization in quantum machine learning.*
 In preparation.
 
+**L. Zhu**, Z. Zhang, Y. Dong, and X. Li.
+*Rethinking noise in quantum machine learning: When noise improves learning.*
+APL Computational Physics 2, 030901 (2026).
+[arXiv:2601.13275](https://arxiv.org/abs/2601.13275)
+[code](https://github.com/Linghua-Zhu/Quantum-Noise-QGNN)
+
 **L. Zhu**, S. Liang, X. Liu, C. Yang, and X. Li.
 *Artificial-intelligence-driven shot reduction in quantum measurement.*
 Chemical Physics Reviews 5, 041403 (2024).

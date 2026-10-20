@@ -37,4 +37,10 @@ I will be recruiting PhD students to start in Fall 2027. See [Join](/join/).
 
 ## News
 
+**October 2026.** Quantum Information and Programming 101, an interactive course tool for a
+first course in quantum computing, is open. See [Teaching](/teaching/).
+
+**September 2026.** Our perspective on when noise improves quantum machine learning is out in
+APL Computational Physics.
+
 **September 2026.** Visiting the Department of Computer Science, Colorado School of Mines.
